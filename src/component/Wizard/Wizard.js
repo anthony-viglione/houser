@@ -61,9 +61,9 @@ class Wizard extends Component {
         }
 
         axios.post('/api/houses',newHouse).then(res=>{
-            console.log(res)
+            console.log(res.data)
             // this.setState({
-                
+            //     houses:res.data
             // })
         })
     }
@@ -88,7 +88,9 @@ class Wizard extends Component {
                             Cancel
                         </button>
                     </Link>
-                    <button onClick={()=>{this.handleNewHouse(this.state.property_name,this.state.address,this.state.city,this.state.state,this.state.zipcode)}}>Complete</button>
+                    <Link to='/'>
+                        <button onClick={()=>{this.handleNewHouse(this.state.property_name,this.state.address,this.state.city,this.state.state,this.state.zipcode)}}>Complete</button>
+                    </Link>
                 </div>
             </div>
         )

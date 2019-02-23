@@ -13,6 +13,7 @@ module.exports = {
         const { property_name, address, city, state, zipcode } = req.body;
 
         db.create_house([property_name, address, city, state, zipcode]).then(response=>{
+            // console.log(response)
             res.status(200).send(response)
         })
 
